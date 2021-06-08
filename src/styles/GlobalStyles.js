@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html, body {
+        scroll-behavior: smooth;
         background: var(--default-background);
         color: white;
     }
@@ -28,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
         --card: #282C35; 
         --skill-card: #3F3D56;
         --gray: #D2D2D2;
+        --text: rgb(195, 195, 207);
 
     }
 `;

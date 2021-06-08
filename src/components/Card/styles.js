@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {BsArrowRight, BsArrowLeft} from 'react-icons/bs';
+
 
 export const Container = styled.div`
   display: flex;
@@ -36,33 +38,39 @@ export const Container = styled.div`
 
   .b_round, .s_round {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 0px;
     bottom: 0px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     transition: all 0.2s linear;
   }
 
   .b_round {
     opacity: 0;
-    background-color: var(--primary);
+    background-color: var(--secondary);
   }
 
   .r_wrap:hover .b_round {
     transform: scale(1.37);
     opacity: 0.4;
   }
-
-  .s_arrow {
-    width: 32px;
-    height: 32px;
-    background-image: url('https://img-fotki.yandex.ru/get/194549/29644339.5/0_d6c60_1d7815f0_orig');
-    background-color: transparent;
-    transition: all 0.35s linear;
-  }
 `;
+
+export const ArrowLeft = styled(BsArrowLeft)`
+  width: 20px;
+  height: 20px;
+`
+
+export const ArrowRight = styled(BsArrowRight)`
+  width: 20px;
+  height: 20px;
+`
+
 export const Avatar = styled.div`
   height: 122px;
   width: 122px;

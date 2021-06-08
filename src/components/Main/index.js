@@ -1,31 +1,52 @@
 import React, { useEffect, useState } from "react";
-
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
 import Bounce from "react-reveal/Bounce";
-import Roll from "react-reveal/Roll";
-import Rotate from "react-reveal/Rotate";
 import Fade from "react-reveal/Fade";
-
 import Card from "../Card";
 import { AnimatedSocialIcon } from "react-animated-social-icons";
 import {
   Container,
   Whoami,
   Porfolio,
-  ProjectCard,
   TopTab,
   Developer,
   SkillCard,
   FastIcon,
   ResIcon,
   DynamicIcon,
+  GitHubIcon,
   BulbIcon,
   Contact,
+  ProjectCard,
   PhoneIcon,
   EmailIcon,
   Hacker,
 } from "./styles";
+import ContactForm from "../ContactForm";
+import { motion } from "framer-motion";
+
+const ProgressBar = (props) => {
+  const { bgcolor, completed } = props;
+
+  const containerStyles = {
+    height: "5px",
+    width: "100%",
+    backgroundColor: "white",
+  };
+
+  const fillerStyles = {
+    height: "100%",
+    width: `${completed}%`,
+    backgroundColor: bgcolor,
+  };
+
+  return (
+    <li style={containerStyles}>
+      <div style={fillerStyles}></div>
+    </li>
+  );
+};
 
 function Main() {
   const [data, setData] = useState([]);
@@ -38,38 +59,61 @@ function Main() {
       });
   }, []);
 
+  const [text, setText] = useState({
+    title: "RESPONSIVE",
+    text: "todos os meus sites serão responsivos",
+  });
+
+  const [active, setActive] = useState({ [1]: true });
+  const cards = [
+    {
+      id: 1,
+      title: "~ RESPONSIVE",
+      text: "All of my websites will be fully responsive, working in any device, big or small.",
+    },
+    { id: 2, title: "~ FAST", text: "vai pro inferno" },
+    { id: 3, title: "~ DYNAMIC" },
+    { id: 4, title: "~ INTUITIVE" },
+  ];
+
+  function changeData(title, text, id) {
+    setText({ title: title, text: text });
+    setActive({ [id]: true });
+  }
+
   return (
     <Container>
       <Whoami>
         <Slide left>
           <TopTab />
-          <h1>$~ Who am i ?</h1>
+          <h1>About Me</h1>
         </Slide>
         <div className="content">
           <Bounce left>
             <div>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                Hey! My name is Vitor, I am a software developer and an ethical
+                hacker. Since I was little, I have an innate desire to
+                understand how things work, further an obsession with technology
+                and art. These characteristics made me enter ​​hacking, web
+                development, and digital design fields, where I finally found
+                myself.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                Through years of constantly learning, I had many opportunities
+                to work in a vast spectrum of web technologies what let me
+                gather a significant amount of experiences and knowledge. Using
+                this knowledge I enjoy creating things that live on the internet
+                with an interactive, responsive and creative UI/UX! And with a
+                secure, updated, and functioning back-end.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                Besides it, i use the several knowledge that I acquired through
+                years of study about operating systems, computer networks, web
+                development and more, to identify, test, and report
+                vulnerabilities in digital systems.
               </p>
-              <button>CURRICULUM PDF</button>
+              <button>Curriculum Vitae (PDF)</button>
             </div>
           </Bounce>
           <Bounce right>
@@ -85,9 +129,9 @@ function Main() {
                 <TopTab />
                 <h1>My Porfolio</h1>
                 <p>
-                  A small gallery of my recent projects, they are imported from
-                  the GitHub API V3, collecting my recent edited repositories
-                  and converting them here.
+                  A small gallery of my recent projects is imported from the
+                  GitHub API V3, collecting my recently edited repositories and
+                  converting them here.
                 </p>
               </span>
             </Zoom>
@@ -101,17 +145,38 @@ function Main() {
             </button>
           </div>
           <ul>
-            {data.map((n) => (
-              <Zoom>
-                <ProjectCard
-                  key={n.name}
-                  picture={`https://raw.githubusercontent.com/str4vinsk/${n.name}/master/Screenshot.png`}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <a href={n.html_url}>VIEW MORE</a>
+            <Zoom>
+              <ul>
+                <ProjectCard>
+                  <GitHubIcon
+                    onClick={() => (window.location.href = "github.com")}
+                  />
+                  <h1>GitHub Clone</h1>
+                  <p>API REACTJS</p>
                 </ProjectCard>
-              </Zoom>
-            ))}
+                <ProjectCard>
+                  <GitHubIcon
+                    onClick={() => (window.location.href = "github.com")}
+                  />
+                  <h1>Spotify Clone</h1>
+                  <p>API HTML/CSS JS</p>
+                </ProjectCard>
+                <ProjectCard>
+                  <GitHubIcon
+                    onClick={() => (window.location.href = "github.com")}
+                  />
+                  <h1>Subnautica PDA</h1>
+                  <p>JSON HTML/CSS JS</p>
+                </ProjectCard>
+                <ProjectCard>
+                  <GitHubIcon
+                    onClick={() => (window.location.href = "github.com")}
+                  />
+                  <h1>Twitter Clone</h1>
+                  <p>RES REACTJS</p>
+                </ProjectCard>
+              </ul>
+            </Zoom>
           </ul>
         </div>
       </Porfolio>
@@ -125,65 +190,41 @@ function Main() {
           <Slide left>
             <span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                I'm a full-stack developer, I love to build websites that are
+                fast, responsive, interactive, and built with the best
+                practices. My skills with hacking and network allow me to build
+                complex, easy-to-read, secure, and with the most updated
+                technologies back-ends.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                I have serious passion for UI effects, animations and creating
+                intuitive, dynamic user experiences.
               </p>
+              <ul>
+                {cards.map((card) => (
+                  <SkillCard
+                    className={active[card.id] ? "active" : ""}
+                    onClick={() => changeData(card.title, card.text, card.id)}
+                  >
+                    {card.id == 1 && <ResIcon />}
+                    {card.id == 2 && <FastIcon />}
+                    {card.id == 3 && <DynamicIcon />}
+                    {card.id == 4 && <BulbIcon />}
+                  </SkillCard>
+                ))}
+              </ul>
+              <hr />
+              <div className="skills-info">
+                <strong>{text.title}</strong>
+                <p>{text.text}</p>
+              </div>
+              <hr />
             </span>
           </Slide>
           <Slide right>
             <img src={require("../../assets/developer.svg").default} />
           </Slide>
         </div>
-        <ul>
-          <Fade cascade bottom>
-            <SkillCard>
-              <span>
-                <FastIcon />
-              </span>
-              <h3>Fast</h3>
-              <p>
-                Fast load times and lag free interaction, my highest priority.
-              </p>
-            </SkillCard>
-            <SkillCard>
-              <span>
-                <ResIcon />
-              </span>
-              <h3>Dynamic</h3>
-              <p>
-                Fast load times and lag free interaction, my highest priority.
-              </p>
-            </SkillCard>
-            <SkillCard>
-              <span>
-                <DynamicIcon />
-              </span>
-              <h3>Responsive</h3>
-              <p>
-                Fast load times and lag free interaction, my highest priority.
-              </p>
-            </SkillCard>
-            <SkillCard>
-              <span>
-                <BulbIcon />
-              </span>
-              <h3>Intuitive</h3>
-              <p>
-                Fast load times and lag free interaction, my highest priority.
-              </p>
-            </SkillCard>
-          </Fade>
-        </ul>
       </Developer>
       <Hacker>
         <TopTab />
@@ -239,7 +280,7 @@ function Main() {
             </span>
           </div>
         </Fade>
-        <Rotate cascade>
+        <Fade cascade>
           <div className="sub-div">
             <AnimatedSocialIcon
               brandName="twitter"
@@ -282,15 +323,8 @@ function Main() {
               style={{ margin: "0 10px 0 0" }}
             />
           </div>
-        </Rotate>
-        <form>
-          <Fade bottom cascade>
-            <input type="text" placeholder="Your Name..." id="name" />
-            <input type="text" placeholder="Your E-mail..." id="email" />
-            <textarea placeholder="Your Message!" id="message" />
-          </Fade>
-          <button>SUBMIT</button>
-        </form>
+        </Fade>
+        <ContactForm />
       </Contact>
     </Container>
   );

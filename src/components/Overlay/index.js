@@ -4,7 +4,7 @@ import { Container, DropIcon, Title } from "./styles";
 import Particles from "react-particles-js";
 
 function Overlay() {
-  const line = "Hey!:Name's Vitor,:Web Developer,:HACKER!";
+  const line = "Hey! 👋:Name's Vitor,:Web Developer,:HACKER!";
 
   const letterContainerVariants = {
     before: { transition: { staggerChildren: 0.08 } },
@@ -63,9 +63,6 @@ function Overlay() {
           ))}
         </Title>
       </AnimatePresence>
-      <button>
-        CONTACT ME <DropIcon />
-      </button>
     </Container>
   );
 }

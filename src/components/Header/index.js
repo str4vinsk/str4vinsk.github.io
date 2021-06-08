@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Logo, MobileMenu } from "./styles";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [scrollHeader, setScroll] = useState(false);
@@ -27,19 +28,19 @@ function Header() {
     <Container scrollHeader={scrollHeader} active={active}>
       <Logo />
       <ul className="pc-menu">
-        <li>ABOUT ME</li>
+        <Link to="/about" style={{textDecoration: 'none'}}><li>ABOUT ME</li></Link>
         <li>PROJECTS</li>
         <li>CONTACT</li>
         <li>BLOG</li>
-        <button>GITHUB</button>
+        <Link to="/" style={{textDecoration: 'none'}}><button>HOME</button></Link>
       </ul>
       {active && (
         <ul className="mobile-menu">
-          <li>ABOUT ME</li>
+          <Link to="/about" style={{textDecoration: 'none'}}><li>ABOUT ME</li></Link>
           <li>PROJECTS</li>
           <li>CONTACT</li>
           <li>BLOG</li>
-          <button>GITHUB</button>
+          <Link to="/" style={{textDecoration: 'none'}}><button>HOME</button></Link>
         </ul>
       )}
       <MobileMenu barColor="white" isActive={active} onClick={showMenu} />

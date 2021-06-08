@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Avatar, Name, Description, Skill } from "./styles";
+import { Container, Avatar, Name, Description, Skill, ArrowRight, ArrowLeft } from "./styles";
 import ReactCardFlip from "react-card-flip";
 
 function Card() {
@@ -35,6 +35,7 @@ function Card() {
 
           </div>
           <div className="s_round">
+            <ArrowRight />
           </div>
         </div>
       </Container>
@@ -62,6 +63,7 @@ function Card() {
 
           </div>
           <div className="s_round">
+            <ArrowLeft />
           </div>
         </div>
       </Container>

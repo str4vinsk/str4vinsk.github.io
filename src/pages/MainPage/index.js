@@ -1,14 +1,11 @@
 import React from "react";
-
 import { Container } from "./styles";
-import Header from "../Header";
-import Main from "../Main";
-import Overlay from "../Overlay";
+import Main from "../../components/Main";
+import Overlay from "../../components/Overlay";
 
-function Layout() {
+function MainPage() {
   return (
     <Container>
-      <Header />
       <Overlay />
       <Main />
       {/* <Footer /> */}
@@ -16,4 +13,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default MainPage;

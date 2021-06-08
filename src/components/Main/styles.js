@@ -3,6 +3,17 @@ import { MdDevices, MdEmail } from "react-icons/md";
 import { IoMdRocket, IoMdBulb, IoMdSpeedometer } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { AiFillGithub } from "react-icons/ai";
+
+export const GitHubIcon = styled(AiFillGithub)`
+  color: black;
+  align-self: flex-end;
+  width: 25px;
+  height: 25px;
+  margin: 0 15px;
+  z-index: 2;
+  cursor: pointer;
+`;
 
 export const Container = styled.div`
   max-width: 96%;
@@ -41,7 +52,7 @@ export const Whoami = styled.div`
       }
 
       p {
-        margin: 0;
+        margin: 15px 0 0 0;
       }
     }
   }
@@ -58,8 +69,8 @@ export const Whoami = styled.div`
 
   p {
     font-size: 20px;
-    max-width: 800px;
-    margin: 5px 100px 0 0;
+    max-width: 600px;
+    margin: 15px 100px 0 0;
   }
 
   button {
@@ -71,6 +82,7 @@ export const Whoami = styled.div`
     margin: 20px 0;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
+    position: relative;
     transition: 0.4s;
     letter-spacing: 1px;
     cursor: pointer;
@@ -86,7 +98,7 @@ export const Porfolio = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 50px;
+  padding: 70px 50px;
   margin: 30px 0;
   border-radius: 20px;
   background-color: var(--branch-background);
@@ -197,6 +209,26 @@ export const Developer = styled.div`
     margin: 10px 0;
   }
 
+  hr {
+    margin: 30px 0;
+  }
+
+  .skills-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    strong {
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--text);
+    }
+  }
+
   img {
     max-width: 50%;
     max-height: 50%;
@@ -221,16 +253,93 @@ export const Developer = styled.div`
     margin: 0 0 20px 0;
   }
 
+  .chart-list {
+    flex-direction: column;
+    margin: 0;
+
+    > li {
+      margin: 10px 0;
+      width: 100%;
+
+      > h2 {
+        font-size: 18px;
+        margin: 5px 0;
+        color: white;
+      }
+    }
+  }
+
   ul {
     list-style: none;
     display: flex;
+    flex-shrink: 0;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
+    margin: 30px 0 0 0;
 
     @media (max-width: 768px) {
       align-items: center;
       justify-content: center;
+    }
+  }
+  .active {
+    --all: 0px;
+    --top-right: 20px;
+    border: 3px solid var(--tertiary);
+
+    background: linear-gradient(
+          45deg,
+          var(--tertiary) 0 calc(var(--bottom-left, var(--all)) + 3px),
+          transparent 0
+        )
+        bottom left / 50% 50%,
+      linear-gradient(
+          -45deg,
+          var(--tertiary) 0 calc(var(--bottom-right, var(--all)) + 3px),
+          transparent 0
+        )
+        bottom right/50% 50%,
+      linear-gradient(
+          135deg,
+          var(--tertiary) 0 calc(var(--top-left, var(--all)) + 3px),
+          transparent 0
+        )
+        top left / 50% 50%,
+      linear-gradient(
+          -135deg,
+          var(--tertiary) 0 calc(var(--top-right, var(--all)) + 3px),
+          transparent 0
+        )
+        top right / 50% 50%,
+      var(--img, transparent);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    -webkit-mask: linear-gradient(
+          45deg,
+          transparent 0 var(--bottom-left, var(--all)),
+          #fff 0
+        )
+        bottom left,
+      linear-gradient(
+          -45deg,
+          transparent 0 var(--bottom-right, var(--all)),
+          #fff 0
+        )
+        bottom right,
+      linear-gradient(135deg, transparent 0 var(--top-left, var(--all)), #fff 0)
+        top left,
+      linear-gradient(
+          -135deg,
+          transparent 0 var(--top-right, var(--all)),
+          #fff 0
+        )
+        top right;
+    -webkit-mask-size: 50.5% 50.5%;
+    -webkit-mask-repeat: no-repeat;
+
+    > svg {
+      color: white;
+      fill: white;
     }
   }
 `;
@@ -326,49 +435,6 @@ export const Contact = styled.div`
     margin: 20px 0;
   }
 
-  form {
-    width: 450px;
-
-    @media (max-width: 500px) {
-      width: 250px;
-    }
-
-    > input,
-    textarea {
-      background: transparent;
-      padding: 16px;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 0 5px 0;
-      border: 1px solid var(--quinary);
-      color: white;
-    }
-
-    > button {
-      padding: 15px;
-      width: 185px;
-      background: transparent;
-      border: 3px solid var(--quinary);
-      color: var(--quinary);
-      height: 50px;
-
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      transition: 0.4s;
-      letter-spacing: 1px;
-      cursor: pointer;
-
-      :hover {
-        box-shadow: inset 185px 0 0 0 var(--quinary);
-        color: white;
-      }
-    }
-
-    #message {
-      height: 250px;
-    }
-  }
-
   span {
     display: flex;
     flex-direction: column;
@@ -413,18 +479,49 @@ export const TopTab = styled.div`
 export const ProjectCard = styled(motion.li)`
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 0 15px;
   word-wrap: break-word;
-  min-width: 272px;
-  max-width: 272px;
-  height: 272px;
-  margin: 26px 26px 0 0;
-  border-radius: 5px;
-  background-color: var(--default-background);
-  background-image: ${(props) => `url(${props.picture})`};
+  min-width: 250px;
+  max-width: 250px;
+  height: 300px;
+  margin: 32px 32px 0 0;
   background-position: center;
   background-size: cover;
+
+  :nth-child(1) {
+    background: linear-gradient(180deg, #f3cbab, #feedca);
+  }
+
+  :nth-child(2) {
+    background: linear-gradient(180deg, #b1e5f9, #f4d2fe);
+  }
+
+  :nth-child(3) {
+    background: linear-gradient(180deg, #dbb4f3, #efb7d7);
+  }
+
+  :nth-child(4) {
+    background: linear-gradient(180deg, #efa971, #e4cafe);
+  }
+
+  h1 {
+    font-size: 20pt;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: black;
+    font-weight: 800;
+  }
+
+  p {
+    font-size: 8pt;
+    word-spacing: 20px;
+    font-weight: bold;
+    color: black;
+  }
 
   @media (max-width: 650px) {
     margin: 26px 0;
@@ -432,16 +529,37 @@ export const ProjectCard = styled(motion.li)`
 
   &:hover {
     border: 1px solid var(--primary);
+    background: transparent;
 
-    :before {
+    :after {
       display: block;
     }
 
-    > h2 {
-      opacity: 0;
+    > h1 {
+      color: white;
+    }
+
+    > p {
+      color: white;
+    }
+
+    > svg {
+      color: white;
     }
   }
 
+  ::after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary);
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+  }
+  /* 
   ::before {
     content: "";
     display: none;
@@ -453,7 +571,7 @@ export const ProjectCard = styled(motion.li)`
     left: 0;
     transition: 0.2s;
     background-color: rgba(24, 24, 24, 0.75);
-  }
+  } */
 
   a {
     font-size: 12px;
@@ -483,10 +601,18 @@ export const ProjectCard = styled(motion.li)`
 `;
 
 const iconCss = css`
-  fill: white;
-  color: white;
-  height: 32px;
-  width: 32px;
+  fill: gray;
+  color: gray;
+  height: 100%;
+  width: 100%;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover,
+  :active {
+    fill: white;
+    color: white;
+  }
 `;
 
 export const FastIcon = styled(IoMdSpeedometer)`
@@ -506,47 +632,31 @@ export const BulbIcon = styled(IoMdBulb)`
 `;
 
 export const PhoneIcon = styled(AiFillPhone)`
-  ${iconCss}
+  width: 30px;
+  height: 30px;
 `;
 
 export const EmailIcon = styled(MdEmail)`
-  ${iconCss}
+  width: 30px;
+  height: 30px;
 `;
 
-export const SkillCard = styled(motion.li)`
+export const SkillCard = styled(motion.div)`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
   padding: 15px;
-  width: 170px;
-  height: 212px;
-  background: var(--skill-card);
+  min-width: 120px;
+  min-height: 80px;
+  max-width: 120px;
+  max-height: 80px;
+  position: relative;
   margin: 10px 15px 10px 0;
-  border-radius: 5px;
+  transition-property: transform;
 
   @media (max-width: 500px) {
-    width: 100%;
-  }
-
-  span {
-    border: 3px solid var(--tertiary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    height: 62px;
-    width: 62px;
-    border-radius: 50%;
-  }
-
-  h3 {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-
-  p {
-    font-size: 12px;
-    color: var(--gray);
-    text-align: center;
+    width: 320px;
   }
 `;
