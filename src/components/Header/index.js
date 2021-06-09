@@ -28,19 +28,27 @@ function Header() {
     <Container scrollHeader={scrollHeader} active={active}>
       <Logo />
       <ul className="pc-menu">
-        <Link to="/about" style={{textDecoration: 'none'}}><li>ABOUT ME</li></Link>
+        <Link to="/about" style={{ textDecoration: "none" }}>
+          <li>ABOUT ME</li>
+        </Link>
         <li>PROJECTS</li>
         <li>CONTACT</li>
         <li>BLOG</li>
-        <Link to="/" style={{textDecoration: 'none'}}><button>HOME</button></Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <button>HOME</button>
+        </Link>
       </ul>
       {active && (
         <ul className="mobile-menu">
-          <Link to="/about" style={{textDecoration: 'none'}}><li>ABOUT ME</li></Link>
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            <li>ABOUT ME</li>
+          </Link>
           <li>PROJECTS</li>
           <li>CONTACT</li>
           <li>BLOG</li>
-          <Link to="/" style={{textDecoration: 'none'}}><button>HOME</button></Link>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <button>HOME</button>
+          </Link>
         </ul>
       )}
       <MobileMenu barColor="white" isActive={active} onClick={showMenu} />

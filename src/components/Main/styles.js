@@ -174,6 +174,56 @@ export const Porfolio = styled.div`
   }
 `;
 
+export const SubDevImg = styled.div`
+  height: 400px;
+  width: 100%;
+  position: relative;
+  background-image: ${(props) => `url(${props.src})`};
+  background-position: center;
+  background-size: cover;
+  margin: 30px 0;
+  transition: 0.2s;
+
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    width: 104%;
+    height: 94%;
+    border: 1px solid white;
+    top: 10px;
+    left: -9px;
+  }
+`
+
+export const DevImg = styled.div`
+  height: 600px;
+  width: 500px;
+  margin: 20px 0;
+  margin: 0 70px;
+  position: relative;
+  background-image: ${(props) => `url(${props.src})`};
+  background-position: center;
+  background-size: cover;
+  transition: 0.2s;
+
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    width: 104%;
+    height: 97%;
+    border: 1px solid white;
+    left: -10px;
+  }
+`;
+
 export const Developer = styled.div`
   padding: 0 20px;
   margin: 30px 0;
@@ -229,16 +279,6 @@ export const Developer = styled.div`
     }
   }
 
-  img {
-    max-width: 50%;
-    max-height: 50%;
-    margin: 20px 0;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
   h1 {
     font-size: 60px;
     color: var(--tertiary);
@@ -250,7 +290,7 @@ export const Developer = styled.div`
 
   h2 {
     color: var(--gray);
-    margin: 0 0 20px 0;
+    margin: 0 0 50px 0;
   }
 
   .chart-list {
@@ -285,6 +325,7 @@ export const Developer = styled.div`
   .active {
     --all: 0px;
     --top-right: 20px;
+
     border: 3px solid var(--tertiary);
 
     background: linear-gradient(
@@ -654,7 +695,6 @@ export const SkillCard = styled(motion.div)`
   max-height: 80px;
   position: relative;
   margin: 10px 15px 10px 0;
-  transition-property: transform;
 
   @media (max-width: 500px) {
     width: 320px;

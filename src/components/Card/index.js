@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Container, Avatar, Name, Description, Skill, ArrowRight, ArrowLeft } from "./styles";
+import {
+  Container,
+  Avatar,
+  Name,
+  Description,
+  Skill,
+  ArrowRight,
+  ArrowLeft,
+} from "./styles";
 import ReactCardFlip from "react-card-flip";
 
 function Card() {
@@ -30,10 +38,8 @@ function Card() {
             <Skill src={require("../../assets/sass-icon.svg").default} />
           </li>
         </ul>
-        <div className="r_wrap" onClick={handleHover}> 
-          <div className="b_round">
-
-          </div>
+        <div className="r_wrap" onClick={handleHover}>
+          <div className="b_round"></div>
           <div className="s_round">
             <ArrowRight />
           </div>
@@ -55,13 +61,14 @@ function Card() {
             <Skill src={require("../../assets/ruby-icon.svg").default} />
           </li>
           <li>
-            <Skill src={require("../../assets/network-icon.svg").default} alt="network" />
+            <Skill
+              src={require("../../assets/network-icon.svg").default}
+              alt="network"
+            />
           </li>
         </ul>
         <div className="r_wrap" onClick={handleHover}>
-          <div className="b_round">
-
-          </div>
+          <div className="b_round"></div>
           <div className="s_round">
             <ArrowLeft />
           </div>

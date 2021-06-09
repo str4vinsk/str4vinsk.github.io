@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
 import Bounce from "react-reveal/Bounce";
@@ -14,6 +14,8 @@ import {
   SkillCard,
   FastIcon,
   ResIcon,
+  SubDevImg,
+  DevImg,
   DynamicIcon,
   GitHubIcon,
   BulbIcon,
@@ -24,7 +26,6 @@ import {
   Hacker,
 } from "./styles";
 import ContactForm from "../ContactForm";
-import { motion } from "framer-motion";
 
 const ProgressBar = (props) => {
   const { bgcolor, completed } = props;
@@ -60,8 +61,9 @@ function Main() {
   }, []);
 
   const [text, setText] = useState({
-    title: "RESPONSIVE",
-    text: "todos os meus sites serão responsivos",
+    title: "~ RESPONSIVE",
+    text: "All of my websites will be fully responsive, working on any device.",
+    img: "https://img5.goodfon.com/wallpaper/nbig/c/f4/cloud-d-kda-nu-tuan-fragment-devushki-avto.jpg",
   });
 
   const [active, setActive] = useState({ [1]: true });
@@ -69,15 +71,31 @@ function Main() {
     {
       id: 1,
       title: "~ RESPONSIVE",
-      text: "All of my websites will be fully responsive, working in any device, big or small.",
+      text: "All of my websites will be fully responsive, working on any device.",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnjyxutc1Mv2XDv9x8Pj_oMJA0n2L4r0Mkkw&usqp=CAU",
     },
-    { id: 2, title: "~ FAST", text: "vai pro inferno" },
-    { id: 3, title: "~ DYNAMIC" },
-    { id: 4, title: "~ INTUITIVE" },
+    {
+      id: 2,
+      title: "~ FAST",
+      text: "Fast load times and lag free interaction!",
+      img: "https://p4.wallpaperbetter.com/wallpaper/624/753/203/illustration-artwork-digital-art-fan-art-drawing-hd-wallpaper-preview.jpg",
+    },
+    {
+      id: 3,
+      title: "~ DYNAMIC",
+      text: "Everything is about movement, including my websites! 🚀",
+      img: "https://i.pinimg.com/originals/bf/e3/79/bfe37983262543b66820764e588fc5bb.jpg",
+    },
+    {
+      id: 4,
+      title: "~ INTUITIVE",
+      text: "Easy to use, intuitive UI/UX. 👨‍💻",
+      img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19e24307-db04-49cb-b91c-43ffff7b1b44/dcsc0gm-1b619dce-3e49-46d4-be9e-87362090e78e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5ZTI0MzA3LWRiMDQtNDljYi1iOTFjLTQzZmZmZjdiMWI0NFwvZGNzYzBnbS0xYjYxOWRjZS0zZTQ5LTQ2ZDQtYmU5ZS04NzM2MjA5MGU3OGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zYlGxyAFxj6esslUIaC9PuJZw3FcunLJPdz0Or76zfU",
+    },
   ];
 
-  function changeData(title, text, id) {
-    setText({ title: title, text: text });
+  function changeData(title, text, id, img) {
+    setText({ title: title, text: text, img: img });
     setActive({ [id]: true });
   }
 
@@ -200,11 +218,16 @@ function Main() {
                 I have serious passion for UI effects, animations and creating
                 intuitive, dynamic user experiences.
               </p>
+              <Slide right>
+                <SubDevImg src={text.img} />
+              </Slide>
               <ul>
                 {cards.map((card) => (
                   <SkillCard
                     className={active[card.id] ? "active" : ""}
-                    onClick={() => changeData(card.title, card.text, card.id)}
+                    onClick={() =>
+                      changeData(card.title, card.text, card.id, card.img)
+                    }
                   >
                     {card.id == 1 && <ResIcon />}
                     {card.id == 2 && <FastIcon />}
@@ -222,7 +245,7 @@ function Main() {
             </span>
           </Slide>
           <Slide right>
-            <img src={require("../../assets/developer.svg").default} />
+            <DevImg src={text.img} />
           </Slide>
         </div>
       </Developer>

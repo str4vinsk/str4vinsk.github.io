@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import {AiFillGithub} from 'react-icons/ai'
+import { AiFillGithub } from "react-icons/ai";
 
 export const GitHubIcon = styled(AiFillGithub)`
-    color: black;
-    align-self: flex-end;
-    width: 25px;
-    height: 25px;
-    margin: 0 15px;
-    z-index: 2;
-    cursor: pointer;
-`
+  color: black;
+  align-self: flex-end;
+  width: 25px;
+  height: 25px;
+  margin: 0 15px;
+  z-index: 2;
+  cursor: pointer;
+`;
 
 export const Container = styled.div`
   position: relative;
@@ -37,10 +37,10 @@ export const Container = styled.div`
   }
 
   p {
-      font-size: 8pt;
-      word-spacing: 20px;
-      font-weight: bold;
-      color: black;
+    font-size: 8pt;
+    word-spacing: 20px;
+    font-weight: bold;
+    color: black;
   }
 
   @media (max-width: 650px) {
@@ -60,11 +60,11 @@ export const Container = styled.div`
     }
 
     > p {
-        color: white;
+      color: white;
     }
 
     > svg {
-        color: white;
+      color: white;
     }
   }
 

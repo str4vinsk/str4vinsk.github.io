@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {BsArrowRight, BsArrowLeft} from 'react-icons/bs';
-
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 export const Container = styled.div`
   display: flex;
@@ -36,7 +35,8 @@ export const Container = styled.div`
     right: 0;
   }
 
-  .b_round, .s_round {
+  .b_round,
+  .s_round {
     position: absolute;
     display: flex;
     align-items: center;
@@ -64,12 +64,12 @@ export const Container = styled.div`
 export const ArrowLeft = styled(BsArrowLeft)`
   width: 20px;
   height: 20px;
-`
+`;
 
 export const ArrowRight = styled(BsArrowRight)`
   width: 20px;
   height: 20px;
-`
+`;
 
 export const Avatar = styled.div`
   height: 122px;
@@ -90,5 +90,4 @@ export const Description = styled.div`
   font-size: 12px;
   color: var(--gray);
 `;
-export const Skill = styled.img`
-`;
+export const Skill = styled.img``;
