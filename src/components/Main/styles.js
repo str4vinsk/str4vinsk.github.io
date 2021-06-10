@@ -197,7 +197,7 @@ export const SubDevImg = styled.div`
     top: 10px;
     left: -9px;
   }
-`
+`;
 
 export const DevImg = styled.div`
   height: 600px;
@@ -402,7 +402,7 @@ export const Hacker = styled.div`
     }
   }
 
-  div {
+  .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -411,6 +411,20 @@ export const Hacker = styled.div`
     @media (max-width: 1220px) {
       flex-direction: column;
       align-items: center;
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  .terminal {
+    background-color: var(--default-background);
+    width: 600px;
+    border: 1px solid var(--quaternay);
+
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 
@@ -422,12 +436,12 @@ export const Hacker = styled.div`
   p {
     max-width: 632px;
     font-size: 20px;
-    margin: 30px 0;
+    margin: 30px 0 20px 0;
   }
 
   img {
     max-width: 50%;
-    margin: 0 30px 0 0;
+    margin: 30px 30px 0 0;
   }
 `;
 

@@ -26,6 +26,7 @@ import {
   Hacker,
 } from "./styles";
 import ContactForm from "../ContactForm";
+import Terminal from "react-console-emulator";
 
 const ProgressBar = (props) => {
   const { bgcolor, completed } = props;
@@ -50,6 +51,14 @@ const ProgressBar = (props) => {
 };
 
 function Main() {
+  const commands = {
+    whoami: {
+      description: "A little bit about me.",
+      usage: "whoami",
+      fn: () => "",
+    },
+  };
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -63,7 +72,7 @@ function Main() {
   const [text, setText] = useState({
     title: "~ RESPONSIVE",
     text: "All of my websites will be fully responsive, working on any device.",
-    img: "https://img5.goodfon.com/wallpaper/nbig/c/f4/cloud-d-kda-nu-tuan-fragment-devushki-avto.jpg",
+    img: "https://content.techgig.com/thumb/msid-81298383,width-860,resizemode-4/The-favourite-programming-language-of-hackers-to-write-malware.jpg?140622",
   });
 
   const [active, setActive] = useState({ [1]: true });
@@ -72,25 +81,25 @@ function Main() {
       id: 1,
       title: "~ RESPONSIVE",
       text: "All of my websites will be fully responsive, working on any device.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnjyxutc1Mv2XDv9x8Pj_oMJA0n2L4r0Mkkw&usqp=CAU",
+      img: "https://content.techgig.com/thumb/msid-81298383,width-860,resizemode-4/The-favourite-programming-language-of-hackers-to-write-malware.jpg?140622",
     },
     {
       id: 2,
       title: "~ FAST",
       text: "Fast load times and lag free interaction!",
-      img: "https://p4.wallpaperbetter.com/wallpaper/624/753/203/illustration-artwork-digital-art-fan-art-drawing-hd-wallpaper-preview.jpg",
+      img: "https://builtin.com/sites/default/files/styles/ckeditor_optimize/public/inline-images/software-engineering-perspectives-what-is-a-software-engineer.jpg",
     },
     {
       id: 3,
       title: "~ DYNAMIC",
       text: "Everything is about movement, including my websites! 🚀",
-      img: "https://i.pinimg.com/originals/bf/e3/79/bfe37983262543b66820764e588fc5bb.jpg",
+      img: "https://blog.planview.com/wp-content/uploads/2020/01/Top-6-Software-Development-Methodologies.jpg",
     },
     {
       id: 4,
       title: "~ INTUITIVE",
       text: "Easy to use, intuitive UI/UX. 👨‍💻",
-      img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19e24307-db04-49cb-b91c-43ffff7b1b44/dcsc0gm-1b619dce-3e49-46d4-be9e-87362090e78e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5ZTI0MzA3LWRiMDQtNDljYi1iOTFjLTQzZmZmZjdiMWI0NFwvZGNzYzBnbS0xYjYxOWRjZS0zZTQ5LTQ2ZDQtYmU5ZS04NzM2MjA5MGU3OGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zYlGxyAFxj6esslUIaC9PuJZw3FcunLJPdz0Or76zfU",
+      img: "https://zdblogs.zohocorp.com/creator/decode/sites/creator/decode/files/2020-12/VPL-04%20%281%29.jpg",
     },
   ];
 
@@ -147,9 +156,8 @@ function Main() {
                 <TopTab />
                 <h1>My Porfolio</h1>
                 <p>
-                  A small gallery of my recent projects is imported from the
-                  GitHub API V3, collecting my recently edited repositories and
-                  converting them here.
+                  A small gallery of my recent projects chosen by me, if you're
+                  interest to see some more, you can visit MyWork page!
                 </p>
               </span>
             </Zoom>
@@ -167,28 +175,28 @@ function Main() {
               <ul>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "github.com")}
+                    onClick={() => (window.location.href = "https://github.com/str4vinsk/github-ui-clone")}
                   />
                   <h1>GitHub Clone</h1>
                   <p>API REACTJS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "github.com")}
+                    onClick={() => (window.location.href = "https://github.com/str4vinsk/spotify-mainpage-clone")}
                   />
                   <h1>Spotify Clone</h1>
                   <p>API HTML/CSS JS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "github.com")}
+                    onClick={() => (window.location.href = "https://github.com/str4vinsk/web-subnautica-databank")}
                   />
                   <h1>Subnautica PDA</h1>
                   <p>JSON HTML/CSS JS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "github.com")}
+                    onClick={() => (window.location.href = "https://github.com/str4vinsk/twitter-clone")}
                   />
                   <h1>Twitter Clone</h1>
                   <p>RES REACTJS</p>
@@ -254,26 +262,35 @@ function Main() {
         <Fade top>
           <h1>Ethical Hacker</h1>
         </Fade>
-        <div>
+        <div className="wrapper">
           <Slide left>
             <img src={require("../../assets/hacker.svg").default} />
           </Slide>
           <Slide right>
             <span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
+                Since the beginning of my journey as a technology enthusiast
+                years ago, my main area of ​​interest was always ethical
+                hacking. I started to delve into the subject and found that it
+                was not an easy journey, well, not a bit... however, I did not
+                give up and today I am still passionate about this area, and I
+                intend to become more and more professional as time goes on.
               </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                vel faucibus orci, ac porta velit. Maecenas sollicitudin, orci
-                consequat volutpat interdum, tortor mi ullamcorper nisl, ut
-                consequat massa libero nec felis. Nam dictum efficitur mauris, a
-                vulputate odio laoreet vitae. Fusce vel congue nunc.
-              </p>
+              <Terminal
+                commands={commands}
+                welcomeMessage={[
+                  "=============================",
+                  "Wanna know more about it? Type help!",
+                  "=============================",
+                  " ",
+                  " ",
+                ]}
+                promptLabel={"> "}
+                promptLabelStyle={{ color: "var(--primary)" }}
+                className="terminal"
+                contentStyle={{ color: "white" }}
+                inputTextStyle={{ color: "var(--quaternay)" }}
+              />
             </span>
           </Slide>
         </div>
