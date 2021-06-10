@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ea24d8a7.chunk.js",
+    "main.js.map": "/static/js/main.ea24d8a7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c1872b4d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c1872b4d.js.map",
+    "static/js/2.b4f10bd0.chunk.js": "/static/js/2.b4f10bd0.chunk.js",
+    "static/js/2.b4f10bd0.chunk.js.map": "/static/js/2.b4f10bd0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.b4f10bd0.chunk.js.LICENSE.txt": "/static/js/2.b4f10bd0.chunk.js.LICENSE.txt",
+    "static/media/bash-icon.svg": "/static/media/bash-icon.59540339.svg",
+    "static/media/hacker.svg": "/static/media/hacker.0562f27e.svg",
+    "static/media/js-icon.svg": "/static/media/js-icon.5e24f9c5.svg",
+    "static/media/network-icon.svg": "/static/media/network-icon.af5cdaf7.svg",
+    "static/media/node-icon.svg": "/static/media/node-icon.fdc2ddc0.svg",
+    "static/media/python-icon.svg": "/static/media/python-icon.aa5e6dba.svg",
+    "static/media/react-icon.svg": "/static/media/react-icon.a27a10eb.svg",
+    "static/media/ruby-icon.svg": "/static/media/ruby-icon.1668399b.svg",
+    "static/media/sass-icon.svg": "/static/media/sass-icon.d49f1ad3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1872b4d.js",
+    "static/js/2.b4f10bd0.chunk.js",
+    "static/js/main.ea24d8a7.chunk.js"
+  ]
+}
