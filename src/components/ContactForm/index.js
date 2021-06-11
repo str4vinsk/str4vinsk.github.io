@@ -9,7 +9,7 @@ function ContactForm() {
   }
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} method="POST">
         <input
           id="email"
           placeholder="Your e-mail..."

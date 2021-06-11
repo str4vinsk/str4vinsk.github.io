@@ -70,7 +70,7 @@ function Main() {
   }, []);
 
   const [text, setText] = useState({
-    title: "~ RESPONSIVE",
+    title: "// RESPONSIVE",
     text: "All of my websites will be fully responsive, working on any device.",
     img: "https://content.techgig.com/thumb/msid-81298383,width-860,resizemode-4/The-favourite-programming-language-of-hackers-to-write-malware.jpg?140622",
   });
@@ -79,25 +79,25 @@ function Main() {
   const cards = [
     {
       id: 1,
-      title: "~ RESPONSIVE",
+      title: "// RESPONSIVE",
       text: "All of my websites will be fully responsive, working on any device.",
       img: "https://content.techgig.com/thumb/msid-81298383,width-860,resizemode-4/The-favourite-programming-language-of-hackers-to-write-malware.jpg?140622",
     },
     {
       id: 2,
-      title: "~ FAST",
+      title: "// FAST",
       text: "Fast load times and lag free interaction!",
       img: "https://builtin.com/sites/default/files/styles/ckeditor_optimize/public/inline-images/software-engineering-perspectives-what-is-a-software-engineer.jpg",
     },
     {
       id: 3,
-      title: "~ DYNAMIC",
+      title: "// DYNAMIC",
       text: "Everything is about movement, including my websites! 🚀",
       img: "https://blog.planview.com/wp-content/uploads/2020/01/Top-6-Software-Development-Methodologies.jpg",
     },
     {
       id: 4,
-      title: "~ INTUITIVE",
+      title: "// INTUITIVE",
       text: "Easy to use, intuitive UI/UX. 👨‍💻",
       img: "https://zdblogs.zohocorp.com/creator/decode/sites/creator/decode/files/2020-12/VPL-04%20%281%29.jpg",
     },
@@ -175,28 +175,40 @@ function Main() {
               <ul>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "https://github.com/str4vinsk/github-ui-clone")}
+                    onClick={() =>
+                      (window.location.href =
+                        "https://github.com/str4vinsk/github-ui-clone")
+                    }
                   />
                   <h1>GitHub Clone</h1>
                   <p>API REACTJS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "https://github.com/str4vinsk/spotify-mainpage-clone")}
+                    onClick={() =>
+                      (window.location.href =
+                        "https://github.com/str4vinsk/spotify-mainpage-clone")
+                    }
                   />
                   <h1>Spotify Clone</h1>
                   <p>API HTML/CSS JS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "https://github.com/str4vinsk/web-subnautica-databank")}
+                    onClick={() =>
+                      (window.location.href =
+                        "https://github.com/str4vinsk/web-subnautica-databank")
+                    }
                   />
                   <h1>Subnautica PDA</h1>
                   <p>JSON HTML/CSS JS</p>
                 </ProjectCard>
                 <ProjectCard>
                   <GitHubIcon
-                    onClick={() => (window.location.href = "https://github.com/str4vinsk/twitter-clone")}
+                    onClick={() =>
+                      (window.location.href =
+                        "https://github.com/str4vinsk/twitter-clone")
+                    }
                   />
                   <h1>Twitter Clone</h1>
                   <p>RES REACTJS</p>
