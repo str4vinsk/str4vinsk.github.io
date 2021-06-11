@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.9f763e1b.chunk.js",
-    "main.js.map": "/static/js/main.9f763e1b.chunk.js.map",
+    "main.js": "/static/js/main.11a931e4.chunk.js",
+    "main.js.map": "/static/js/main.11a931e4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c1872b4d.js",
     "runtime-main.js.map": "/static/js/runtime-main.c1872b4d.js.map",
-    "static/js/2.f973aef9.chunk.js": "/static/js/2.f973aef9.chunk.js",
-    "static/js/2.f973aef9.chunk.js.map": "/static/js/2.f973aef9.chunk.js.map",
+    "static/js/2.267eaf2a.chunk.js": "/static/js/2.267eaf2a.chunk.js",
+    "static/js/2.267eaf2a.chunk.js.map": "/static/js/2.267eaf2a.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.f973aef9.chunk.js.LICENSE.txt": "/static/js/2.f973aef9.chunk.js.LICENSE.txt",
+    "static/js/2.267eaf2a.chunk.js.LICENSE.txt": "/static/js/2.267eaf2a.chunk.js.LICENSE.txt",
     "static/media/bash-icon.svg": "/static/media/bash-icon.59540339.svg",
     "static/media/hacker.svg": "/static/media/hacker.0562f27e.svg",
     "static/media/js-icon.svg": "/static/media/js-icon.5e24f9c5.svg",
@@ -20,7 +20,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c1872b4d.js",
-    "static/js/2.f973aef9.chunk.js",
-    "static/js/main.9f763e1b.chunk.js"
+    "static/js/2.267eaf2a.chunk.js",
+    "static/js/main.11a931e4.chunk.js"
   ]
 }
